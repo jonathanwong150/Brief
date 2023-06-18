@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Brief",
+  "version": "1.0",
+  "description": "A powerful Google Chrome extension designed to enhance your browsing experience by providing concise summaries of news articles",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "action": {
+    "default_popup": "client/popup.html"
+  },
+  "icons": {
+    "128": "128.png",
+    "48": "48.png",
+    "16": "16.png"
+  },
+  "background": {
+    "service_worker": "client/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["client/content.js"]
+    }
+  ]
+}
